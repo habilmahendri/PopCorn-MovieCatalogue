@@ -20,7 +20,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetailActivity" />
+<<<<<<< HEAD
         <activity android:name=".HomeActivity"></activity>
+=======
+        <activity android:name=".RakaActivity"></activity>
+>>>>>>> f63cd867491eb0d86e5792224975b11b1df63715
     </application>
 
 </manifest>
