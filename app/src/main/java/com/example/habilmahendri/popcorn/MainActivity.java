@@ -16,6 +16,7 @@ import android.view.MenuItem;
 
 import com.example.habilmahendri.popcorn.fragment.HomeFragment;
 import com.example.habilmahendri.popcorn.fragment.MovieFragment;
+import com.example.habilmahendri.popcorn.fragment.TvShowFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity
             fragment = new MovieFragment();
 
         } else if (id == R.id.tv_show) {
+            fragment = new TvShowFragment();
 
         } else if (id == R.id.dicover) {
 
