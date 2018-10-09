@@ -7,20 +7,18 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 
 import com.example.habilmahendri.popcorn.R;
-import com.example.habilmahendri.popcorn.fragment.fragmentMovie.AnticipatedFragment;
-import com.example.habilmahendri.popcorn.fragment.fragmentMovie.NowPlaying;
-import com.example.habilmahendri.popcorn.fragment.fragmentMovie.TobBoxFragment;
-import com.example.habilmahendri.popcorn.fragment.fragmentMovie.TopRatedFragment;
-import com.example.habilmahendri.popcorn.fragment.fragmentMovie.TrendingFragment;
-import com.example.habilmahendri.popcorn.fragment.fragmentMovie.UpComingFragment;
+import com.example.habilmahendri.popcorn.fragment.fragmentMovieH.AnticipatedFragment;
+import com.example.habilmahendri.popcorn.fragment.fragmentMovieH.NowPlaying;
+import com.example.habilmahendri.popcorn.fragment.fragmentMovieH.TobBoxFragment;
+import com.example.habilmahendri.popcorn.fragment.fragmentMovieH.TopRatedFragment;
+import com.example.habilmahendri.popcorn.fragment.fragmentMovieH.TrendingFragment;
+import com.example.habilmahendri.popcorn.fragment.fragmentMovieH.UpComingFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +62,7 @@ public class MovieFragment extends Fragment {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
         adapter.addFragment(new NowPlaying(),"Now Playing");
         adapter.addFragment(new TobBoxFragment(),"Top Box Office");
         adapter.addFragment(new AnticipatedFragment(), "Anticipated");

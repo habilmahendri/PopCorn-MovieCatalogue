@@ -1,4 +1,4 @@
-package com.example.habilmahendri.popcorn.fragment.fragmentMovie;
+package com.example.habilmahendri.popcorn.fragment.fragmentMovieH;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.example.habilmahendri.popcorn.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NowPlaying extends Fragment {
+public class AnticipatedFragment extends Fragment {
 
 
-    public NowPlaying() {
+    public AnticipatedFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class NowPlaying extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_now_playing, container, false);
+        return inflater.inflate(R.layout.fragment_anticipated, container, false);
     }
 
 }

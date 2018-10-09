@@ -11,11 +11,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toolbar;
 
 import com.example.habilmahendri.popcorn.R;
-import com.example.habilmahendri.popcorn.fragment.fragmentMovie.AnticipatedFragment;
-import com.example.habilmahendri.popcorn.fragment.fragmentMovie.TrendingFragment;
 import com.example.habilmahendri.popcorn.fragment.fragmentTvShowR.TvShowsAiringTodayFragment;
 import com.example.habilmahendri.popcorn.fragment.fragmentTvShowR.TvShowsAnticipatedFragment;
 import com.example.habilmahendri.popcorn.fragment.fragmentTvShowR.TvShowsOnTheAirFragment;
