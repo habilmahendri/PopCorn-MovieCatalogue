@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.habilmahendri.popcorn.fragment.DiscoverFragment;
 import com.example.habilmahendri.popcorn.fragment.HomeFragment;
 import com.example.habilmahendri.popcorn.fragment.MovieFragment;
 import com.example.habilmahendri.popcorn.fragment.TvShowFragment;
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity
             fragment = new TvShowFragment();
 
         } else if (id == R.id.dicover) {
+            fragment = new DiscoverFragment();
 
         } else if (id == R.id.nav_share) {
 
