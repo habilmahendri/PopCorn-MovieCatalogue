@@ -56,7 +56,7 @@ public class TvShowFragment extends Fragment {
     }
 
     private void setUpViewPager(ViewPager viewPager) {
-        ViewPagerAdapterTvShows adapter = new ViewPagerAdapterTvShows(getFragmentManager());
+        ViewPagerAdapterTvShows adapter = new ViewPagerAdapterTvShows(getChildFragmentManager());
         adapter.addFrag(new TvShowsTrendingFragment(), "TRENDING");
         adapter.addFrag(new TvShowsAnticipatedFragment(), "ANTICIPATED");
         adapter.addFrag(new TvShowsAiringTodayFragment(), "AIRING TODAY");

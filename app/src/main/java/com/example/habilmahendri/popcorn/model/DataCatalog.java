@@ -16,7 +16,6 @@ public class DataCatalog {
     @SerializedName("overview")
     private String overview;
 
-
     public String getPoster() {
         return poster;
     }
