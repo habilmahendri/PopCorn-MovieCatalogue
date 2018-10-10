@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.SearchView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,14 +14,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.habilmahendri.popcorn.fragment.DiscoverFragment;
 import com.example.habilmahendri.popcorn.fragment.HomeFragment;
 import com.example.habilmahendri.popcorn.fragment.MovieFragment;
+import com.example.habilmahendri.popcorn.fragment.SearchFragment;
 import com.example.habilmahendri.popcorn.fragment.TvShowFragment;
+import com.example.habilmahendri.popcorn.fragment.fragmentMovieH.PopularPeopleFragment;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,SearchView.OnQueryTextListener {
+
+    SearchView searchView;
+    String hasil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +69,13 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.searchBar);
+
+        searchView = (SearchView) searchItem.getActionView();
+        searchView.setQueryHint("search");
+        searchView.setOnQueryTextListener(this);
+
         return true;
     }
 
@@ -99,11 +113,10 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.dicover) {
             fragment = new DiscoverFragment();
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.pop_people) {
+            fragment = new PopularPeopleFragment();
 
         } else if (id == R.id.nav_send) {
-
-        } else if (id == R.id.pop_people) {
 
         }
         if (fragment != null) {
@@ -117,4 +130,28 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+        hasil = s;
+
+        Fragment fragment = null;
+        fragment = new SearchFragment();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_main, fragment)
+                .commit();
+        return true;
+    }
+
+    public String getMyData() {
+        return hasil;
+    }
+
 }

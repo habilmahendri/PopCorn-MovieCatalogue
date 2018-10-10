@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.example.habilmahendri.popcorn.R;
 import com.example.habilmahendri.popcorn.adapter.MovieAdapter;
+import com.example.habilmahendri.popcorn.adapter.PopularPeopleAdapter;
 import com.example.habilmahendri.popcorn.api.ApiClient;
 import com.example.habilmahendri.popcorn.model.DataCatalog;
 import com.example.habilmahendri.popcorn.model.JSONResponse;
@@ -28,21 +29,19 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TobBoxFragment extends Fragment {
+public class PopularPeopleFragment extends Fragment {
 
-
-    private MovieAdapter adapter;
+    private PopularPeopleAdapter adapter;
 
     private ArrayList<DataCatalog>data;
     private Call<JSONResponse> apicall;
     private ApiClient apiClient = new ApiClient();
     private static final String TAG = "Nowplaying";
 
-    @BindView(R.id.rv_top_movie)
+    @BindView(R.id.rv_people)
     RecyclerView recyclerView;
 
-    public TobBoxFragment() {
-
+    public PopularPeopleFragment() {
         // Required empty public constructor
     }
 
@@ -50,16 +49,16 @@ public class TobBoxFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tob_box, container, false);
+        View view = inflater.inflate(R.layout.fragment_popular, container, false);
 
         ButterKnife.bind(this, view);
-        getTop();
+        getPeople();
         // Inflate the layout for this fragment
         return view;
     }
 
-    public void getTop() {
-        apicall = apiClient.getApiCall().getTopBox();
+    public void getPeople() {
+        apicall = apiClient.getApiCall().getPeople();
         apicall.enqueue(new Callback<JSONResponse>() {
             @Override
             public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
@@ -68,10 +67,10 @@ public class TobBoxFragment extends Fragment {
 
                 for (int i = 0; i<data.size(); i++) {
                     DataCatalog p = data.get(i);
-                    Log.i(TAG, "get top : " + p.getTitle());
+                    Log.i(TAG, "people : " + p.getName());
                 }
-                initView();
 
+                initView();
             }
 
             @Override
@@ -80,13 +79,13 @@ public class TobBoxFragment extends Fragment {
             }
         });
     }
-
     private void initView() {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new MovieAdapter(data, getActivity());
+        adapter = new PopularPeopleAdapter(data, getActivity());
         recyclerView.setAdapter(adapter);
     }
+
 
 }
