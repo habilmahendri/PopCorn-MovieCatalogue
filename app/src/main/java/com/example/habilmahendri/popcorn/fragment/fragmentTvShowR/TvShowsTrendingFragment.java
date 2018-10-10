@@ -31,15 +31,16 @@ import retrofit2.Response;
 public class TvShowsTrendingFragment extends Fragment {
 
     private ArrayList<DataCatalog>data;
+    private TvShowsTrendingAdapter adapter;
     private Call<JSONResponse> apicall;
     private ApiClient apiClient = new ApiClient();
+
+    private static final String tv = "tv";
+    private static final String week = "week";
     private static final String TAG = "Trending";
 
     @BindView(R.id.rv_trending_tv_show)
-    RecyclerView rvTrending;
-    TvShowsTrendingAdapter adapter;
-
-
+    RecyclerView rvTrendingTvShows;
 
     public TvShowsTrendingFragment() {
         // Required empty public constructor
@@ -60,7 +61,7 @@ public class TvShowsTrendingFragment extends Fragment {
     }
 
     public void getTrending() {
-        apicall = apiClient.getApiCall().getTrendingTvShows();
+        apicall = apiClient.getApiCall().getTrendingTvShows(tv, week);
         apicall.enqueue(new Callback<JSONResponse>() {
             @Override
             public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
@@ -69,13 +70,14 @@ public class TvShowsTrendingFragment extends Fragment {
 
                 for (int i = 0; i<data.size(); i++) {
                     DataCatalog trending = data.get(i);
-                    Log.i(TAG, "get tranding : " + trending.getOriginal_name());
+
+                    Log.i(TAG, "get trending title : " + trending.getOriginal_name());
                 }
                 adapter = new TvShowsTrendingAdapter(data, getContext());
                 adapter.setTvShowItems(TvShowsTrendingFragment.this.data);
-                rvTrending.setHasFixedSize(true);
-                rvTrending.setLayoutManager(new LinearLayoutManager(getContext()));
-                rvTrending.setAdapter(adapter);
+                rvTrendingTvShows.setHasFixedSize(true);
+                rvTrendingTvShows.setLayoutManager(new LinearLayoutManager(getContext()));
+                rvTrendingTvShows.setAdapter(adapter);
             }
 
             @Override

@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 
 import com.example.habilmahendri.popcorn.R;
 import com.example.habilmahendri.popcorn.fragment.fragmentTvShowR.TvShowsAiringTodayFragment;
-import com.example.habilmahendri.popcorn.fragment.fragmentTvShowR.TvShowsAnticipatedFragment;
 import com.example.habilmahendri.popcorn.fragment.fragmentTvShowR.TvShowsOnTheAirFragment;
 import com.example.habilmahendri.popcorn.fragment.fragmentTvShowR.TvShowsPopularFragment;
 import com.example.habilmahendri.popcorn.fragment.fragmentTvShowR.TvShowsTopRatedFragment;
@@ -58,7 +57,6 @@ public class TvShowFragment extends Fragment {
     private void setUpViewPager(ViewPager viewPager) {
         ViewPagerAdapterTvShows adapter = new ViewPagerAdapterTvShows(getChildFragmentManager());
         adapter.addFrag(new TvShowsTrendingFragment(), "TRENDING");
-        adapter.addFrag(new TvShowsAnticipatedFragment(), "ANTICIPATED");
         adapter.addFrag(new TvShowsAiringTodayFragment(), "AIRING TODAY");
         adapter.addFrag(new TvShowsOnTheAirFragment(), "ON THE AIR");
         adapter.addFrag(new TvShowsPopularFragment(), "POPULAR");
