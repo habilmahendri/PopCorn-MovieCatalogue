@@ -3,12 +3,15 @@ package com.example.habilmahendri.popcorn.fragment.fragmentMovieH;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.habilmahendri.popcorn.R;
+import com.example.habilmahendri.popcorn.adapter.MovieAdapter;
 import com.example.habilmahendri.popcorn.api.ApiClient;
 import com.example.habilmahendri.popcorn.model.DataCatalog;
 import com.example.habilmahendri.popcorn.model.JSONResponse;
@@ -16,6 +19,8 @@ import com.example.habilmahendri.popcorn.model.JSONResponse;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,10 +30,15 @@ import retrofit2.Response;
  */
 public class NowPlaying extends Fragment {
 
+    private MovieAdapter adapter;
+
     private ArrayList<DataCatalog>data;
     private Call<JSONResponse> apicall;
     private ApiClient apiClient = new ApiClient();
     private static final String TAG = "Nowplaying";
+
+    @BindView(R.id.rv_now)
+    RecyclerView recyclerView;
 
 
 
@@ -44,31 +54,11 @@ public class NowPlaying extends Fragment {
         // Inflate the layout for this fragment
         getNowPlaying();
 
+        ButterKnife.bind(this, view);
+
         return view;
     }
-//
-//    public void getNowPlaying() {
-//        apicall = apiClient.getApiCall().getNowPlaying();
-//        apicall.enqueue(new Callback<JSONResponse>() {
-//            @Override
-//            public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
-//                JSONResponse jsonResponse = response.body();
-//                data = new ArrayList<>(Arrays.asList(jsonResponse.getResults()));
-//
-//                for (int i = 0; i < data.size(); i++) {
-//                    DataCatalog p = data.get(i);
-//                    Log.i(TAG, "get now playing : " + p.getTitle());
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<JSONResponse> call, Throwable t) {
-//
-//            }
-//        });
-//
-//    }
+
 
     public void getNowPlaying() {
         apicall = apiClient.getApiCall().getNowPlaying();
@@ -82,6 +72,7 @@ public class NowPlaying extends Fragment {
                     DataCatalog p = data.get(i);
                     Log.i(TAG, "get now playing : " + p.getTitle());
                 }
+                initView();
 
             }
 
@@ -91,5 +82,14 @@ public class NowPlaying extends Fragment {
             }
         });
     }
+
+    private void initView() {
+        recyclerView.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new MovieAdapter(data, getActivity());
+        recyclerView.setAdapter(adapter);
+    }
+
 
 }
