@@ -53,6 +53,13 @@ public interface RequestApiInterface {
     @GET("tv/top_rated")
     Call<JSONResponse> getTopRatedTvShows();
 
+    //Discover
+    @GET("discover/movie")
+    Call<JSONResponse> getDiscoverMoview();
+
+    @GET("discover/tv")
+    Call<JSONResponse> getDiscoverTvShow();
+
 
 
 
