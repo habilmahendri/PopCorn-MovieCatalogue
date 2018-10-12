@@ -10,46 +10,221 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-    <android.support.design.widget.CollapsingToolbarLayout
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:fitsSystemWindows="true"
+            android:id="@+id/collapsing_toolbar"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#191C22">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/img_backdrop_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        tools:src="@drawable/venom_backdrops" />
+
+
+                    <ImageView
+                        android:id="@+id/img_poster_detail"
+                        android:layout_width="90dp"
+                        android:layout_height="131dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginLeft="16dp"
+                        tools:src="@drawable/venom_poster" />
+
+                    <TextView
+                        android:id="@+id/tv_release_date_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_backdrop_detail"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_toRightOf="@+id/img_poster_detail"
+                        android:textColor="#777777"
+                        android:textSize="11sp"
+                        android:text="2018" />
+
+                    <ImageView
+                        android:id="@+id/circle_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_backdrop_detail"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_toRightOf="@id/tv_release_date_detail"
+                        android:src="@drawable/circle_shape" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_backdrop_detail"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_toRightOf="@id/circle_view"
+                        android:textColor="#777777"
+                        android:textSize="11sp"
+                        android:text="1 hrs 52 mins" />
+
+                    <TextView
+                        android:id="@+id/tv_title_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_release_date_detail"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_toRightOf="@id/img_poster_detail"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="Venom" />
+
+                    <TextView
+                        android:id="@+id/tv_genres_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_title_detail"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_toRightOf="@id/img_poster_detail"
+                        android:textColor="#FFFFFF"
+                        android:textSize="11sp"
+                        android:text="Horror, Science Fiction, Action" />
+
+                </RelativeLayout>
+
+
+            </FrameLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_title_detail"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:fitsSystemWindows="true"
-        app:contentScrim="?attr/colorPrimary"
-        app:expandedTitleTextAppearance="@android:color/transparent"
-        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <FrameLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#191C22">
+            android:background="#FFFFFF"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/img_backdrop_detail"
+            <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:scaleType="centerCrop"
-                tools:src="@drawable/venom_backdrops" />
+                android:layout_height="60dp"
+                android:background="@color/colorPrimaryDark">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                <android.support.design.widget.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-                <ImageView
-                    android:id="@+id/img_poster_detail"
-                    android:layout_width="100dp"
-                    android:layout_height="141dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginLeft="16dp"
-                    tools:src="@drawable/venom_poster" />
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:tabGravity="fill"
+                        app:tabMode="fixed" />
+                </android.support.design.widget.AppBarLayout>
 
-            </RelativeLayout>
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpagerDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            </android.support.design.widget.CoordinatorLayout>
 
 
-        </FrameLayout>
 
-    </android.support.design.widget.CollapsingToolbarLayout>
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:paddingLeft="16dp"-->
+                <!--android:paddingTop="16dp">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/img_star"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:src="@drawable/star" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_star"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@id/img_star"-->
+                    <!--android:layout_marginLeft="3dp"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:text="Rate"-->
+                    <!--android:textSize="14sp" />-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/img_tmdb_logo"-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="38dp"-->
+                    <!--android:layout_marginLeft="24dp"-->
+                    <!--android:layout_toRightOf="@id/img_star"-->
+                    <!--android:src="@drawable/tmdb_logo" />-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@id/img_tmdb_logo"-->
+                    <!--android:layout_marginLeft="35dp"-->
+                    <!--android:layout_marginTop="7dp"-->
+                    <!--android:layout_toRightOf="@id/tv_star"-->
+                    <!--android:textSize="14sp"-->
+                    <!--tools:text="9.0" />-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0.5dp"-->
+                <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginTop="@dimen/activity_vertical_margin"-->
+                <!--android:background="@color/color_black" />-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="500dp"-->
+                <!--android:layout_marginTop="@dimen/activity_vertical_margin"-->
+                <!--android:background="#F8F8F8">-->
+
+            <!--</LinearLayout>-->
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
 
 </android.support.design.widget.CoordinatorLayout>
