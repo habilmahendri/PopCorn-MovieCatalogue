@@ -60,6 +60,7 @@ public class DetailActivity extends AppCompatActivity {
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setTitle(title);
 //        collapsingToolbarLayout.setTitle("Venom");
+
     }
 
 //    private void setUpViewPager(ViewPager viewPager) {
