@@ -9,12 +9,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.habilmahendri.popcorn.R;
 import com.example.habilmahendri.popcorn.adapter.MovieAdapter;
 import com.example.habilmahendri.popcorn.api.ApiClient;
+import com.example.habilmahendri.popcorn.api.RequestApiInterface;
 import com.example.habilmahendri.popcorn.model.DataCatalog;
 import com.example.habilmahendri.popcorn.model.JSONResponse;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,6 +32,7 @@ import retrofit2.Response;
  * A simple {@link Fragment} subclass.
  */
 public class NowPlaying extends Fragment {
+
 
     private MovieAdapter adapter;
 
@@ -52,9 +56,12 @@ public class NowPlaying extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_now_playing, container, false);
         // Inflate the layout for this fragment
-        getNowPlaying();
+
+        Toast.makeText(getContext(), "halo", Toast.LENGTH_SHORT).show();
 
         ButterKnife.bind(this, view);
+
+        getNowPlaying();
 
         return view;
     }
@@ -70,10 +77,10 @@ public class NowPlaying extends Fragment {
 
                 for (int i = 0; i<data.size(); i++) {
                     DataCatalog p = data.get(i);
-                    Log.i(TAG, "get now playing : " + p.getTitle());
+                    Log.i(TAG, "people : " + p.getName());
                 }
-                initView();
 
+                initView();
             }
 
             @Override
@@ -82,7 +89,6 @@ public class NowPlaying extends Fragment {
             }
         });
     }
-
     private void initView() {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
