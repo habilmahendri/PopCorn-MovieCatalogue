@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.habilmahendri.popcorn.R;
 import com.example.habilmahendri.popcorn.adapter.MovieAdapter;
@@ -55,6 +56,8 @@ public class NowPlaying extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_now_playing, container, false);
         // Inflate the layout for this fragment
+
+        Toast.makeText(getContext(), "halo", Toast.LENGTH_SHORT).show();
 
         ButterKnife.bind(this, view);
 
