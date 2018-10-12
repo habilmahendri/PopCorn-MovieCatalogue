@@ -44,7 +44,7 @@ public class DetailActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        tvTitleDetail.setText("Venom Woy");
+        tvTitleDetail.setText("Venom");
         String title = tvTitleDetail.getText().toString();
 
 //        setUpViewPager(viewPager);

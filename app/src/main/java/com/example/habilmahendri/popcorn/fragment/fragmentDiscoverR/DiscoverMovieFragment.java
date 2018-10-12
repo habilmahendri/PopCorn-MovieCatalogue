@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.habilmahendri.popcorn.R;
 import com.example.habilmahendri.popcorn.adapter.MovieAdapter;
@@ -54,7 +55,6 @@ public class DiscoverMovieFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_discover_movie, container, false);
 
         ButterKnife.bind(this, view);
-
         getDiscoverMovie();
 
         return view;
