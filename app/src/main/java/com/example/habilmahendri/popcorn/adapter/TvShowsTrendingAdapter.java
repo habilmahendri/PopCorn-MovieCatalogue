@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.habilmahendri.popcorn.DetailActivity;
+import com.example.habilmahendri.popcorn.activity.DetailActivity;
 import com.example.habilmahendri.popcorn.R;
 import com.example.habilmahendri.popcorn.model.DataCatalog;
 

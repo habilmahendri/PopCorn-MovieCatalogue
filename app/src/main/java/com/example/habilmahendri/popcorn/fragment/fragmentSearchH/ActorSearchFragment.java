@@ -11,9 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.habilmahendri.popcorn.MainActivity;
+import com.example.habilmahendri.popcorn.activity.MainActivity;
 import com.example.habilmahendri.popcorn.R;
-import com.example.habilmahendri.popcorn.adapter.MovieAdapter;
 import com.example.habilmahendri.popcorn.adapter.PopularPeopleAdapter;
 import com.example.habilmahendri.popcorn.api.ApiClient;
 import com.example.habilmahendri.popcorn.model.DataCatalog;

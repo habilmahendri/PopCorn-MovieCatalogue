@@ -10,10 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.habilmahendri.popcorn.DetailArtis;
+import com.example.habilmahendri.popcorn.activity.DetailArtis;
 import com.example.habilmahendri.popcorn.R;
 import com.example.habilmahendri.popcorn.model.DataCatalog;
 

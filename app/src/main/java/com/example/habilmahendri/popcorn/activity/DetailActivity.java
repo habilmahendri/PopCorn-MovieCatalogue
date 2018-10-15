@@ -1,4 +1,4 @@
-package com.example.habilmahendri.popcorn;
+package com.example.habilmahendri.popcorn.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
+import com.example.habilmahendri.popcorn.R;
 import com.example.habilmahendri.popcorn.fragment.DiscoverFragment;
 import com.example.habilmahendri.popcorn.fragment.fragmentDetail.CastDetailFragment;
 import com.example.habilmahendri.popcorn.fragment.fragmentDetail.InfoDetailFragment;

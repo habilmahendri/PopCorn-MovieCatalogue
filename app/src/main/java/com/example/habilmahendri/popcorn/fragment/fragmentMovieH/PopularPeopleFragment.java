@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.example.habilmahendri.popcorn.R;
 import com.example.habilmahendri.popcorn.adapter.MovieAdapter;
@@ -37,6 +38,8 @@ public class PopularPeopleFragment extends Fragment {
     private Call<JSONResponse> apicall;
     private ApiClient apiClient = new ApiClient();
     private static final String TAG = "Nowplaying";
+
+    @BindView(R.id.pg_popular)ProgressBar pg;
 
     @BindView(R.id.rv_people)
     RecyclerView recyclerView;
@@ -69,6 +72,7 @@ public class PopularPeopleFragment extends Fragment {
                     DataCatalog p = data.get(i);
                     Log.i(TAG, "people : " + p.getName());
                 }
+                pg.setVisibility(View.GONE);
 
                 initView();
             }

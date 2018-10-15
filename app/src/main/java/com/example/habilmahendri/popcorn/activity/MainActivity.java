@@ -1,4 +1,4 @@
-package com.example.habilmahendri.popcorn;
+package com.example.habilmahendri.popcorn.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.habilmahendri.popcorn.R;
 import com.example.habilmahendri.popcorn.fragment.DiscoverFragment;
 import com.example.habilmahendri.popcorn.fragment.HomeFragment;
 import com.example.habilmahendri.popcorn.fragment.MovieFragment;

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.habilmahendri.popcorn.R;
@@ -43,6 +44,7 @@ public class NowPlaying extends Fragment {
 
     @BindView(R.id.rv_now)
     RecyclerView recyclerView;
+    @BindView(R.id.pg_nowPlaying)ProgressBar pg;
 
 
 
@@ -77,7 +79,7 @@ public class NowPlaying extends Fragment {
                     DataCatalog p = data.get(i);
                     Log.i(TAG, "people : " + p.getName());
                 }
-
+                pg.setVisibility(View.GONE);
                 initView();
             }
 

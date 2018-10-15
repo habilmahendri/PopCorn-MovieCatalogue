@@ -1,4 +1,4 @@
-package com.example.habilmahendri.popcorn;
+package com.example.habilmahendri.popcorn.activity;
 
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
@@ -13,13 +13,12 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.habilmahendri.popcorn.R;
 import com.example.habilmahendri.popcorn.adapter.ViewPagerAdapter;
 import com.example.habilmahendri.popcorn.api.ApiClient;
 import com.example.habilmahendri.popcorn.fragment.fragmentDetailPeople.TvShowPeopleFragment;
 import com.example.habilmahendri.popcorn.fragment.fragmentDetailPeople.InfoFragment;
-import com.example.habilmahendri.popcorn.fragment.fragmentDetailPeople.MoviePeopleFragment;
 import com.example.habilmahendri.popcorn.fragment.fragmentMovieH.NowPlaying;
-import com.example.habilmahendri.popcorn.fragment.fragmentMovieH.UpComingFragment;
 import com.example.habilmahendri.popcorn.model.DataCatalog;
 import com.example.habilmahendri.popcorn.model.JSONResponse;
 import com.example.habilmahendri.popcorn.slider.FragmentSlider;
