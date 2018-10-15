@@ -1,5 +1,6 @@
 package com.example.habilmahendri.popcorn.api;
 
+import com.example.habilmahendri.popcorn.model.DataCatalog;
 import com.example.habilmahendri.popcorn.model.JSONResponse;
 
 import retrofit2.Call;
@@ -8,6 +9,17 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface RequestApiInterface {
+
+
+    //People
+    @GET("person/{person_id}/images")
+    Call<JSONResponse> getImagePeople(@Path("person_id") String person_id);
+
+    @GET("person/{person_id}/tagged_images")
+    Call<JSONResponse> getImage(@Path("person_id") String person_id);
+
+    @GET("person/{person_id}")
+    Call<DataCatalog> getDetailPeople(@Path("person_id") String person_id);
 
     //Movie
     @GET("movie/now_playing")
