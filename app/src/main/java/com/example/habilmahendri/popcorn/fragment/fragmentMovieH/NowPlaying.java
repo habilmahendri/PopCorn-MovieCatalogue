@@ -57,9 +57,6 @@ public class NowPlaying extends Fragment {
         View view = inflater.inflate(R.layout.fragment_now_playing, container, false);
         // Inflate the layout for this fragment
 
-        Toast.makeText(getContext(), "halo", Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), "hehe", Toast.LENGTH_SHORT).show();
-
         ButterKnife.bind(this, view);
 
         getNowPlaying();

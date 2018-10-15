@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.fragmentDetailPeople.InfoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/overView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        tools:text="Edward Thomas Hardy (born 15 September 1977) is an English actor. He is best known for playing the title character in the 2009 British film Bronson, and for his roles in the films Star Trek Nemesis, RocknRolla, and Inception. He has been cast in the Christopher Nolan film The Dark Knight Rises as Bane.  Description above from the Wikipedia Tom Hardy, licensed under CC-BY-SA, full list of contributors on Wikipedia." />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:background="#d9d7d7"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Facts"
+            />
+
+        <TextView
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginTop="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:textSize="12sp"
+            android:text="-"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Tom hardy"
+            />
+
+        <TextView
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginTop="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Born"/>
+
+        <TextView
+            android:id="@+id/born"
+            android:textSize="12sp"
+            android:text="-"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="September 15, 1977"
+            />
+
+        <TextView
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginTop="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Birthplace"/>
+
+        <TextView
+            android:id="@+id/birthplace"
+            android:text="-"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="HammerSmith"
+            />
+
+        <TextView
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginTop="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Also Know As"/>
+
+        <TextView
+
+            android:text="N/A"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="September 15, 1977"
+            />
+
+    </LinearLayout>
+
+
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Images"
+
+            />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:id="@+id/rv_gallery"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

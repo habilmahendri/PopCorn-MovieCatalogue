@@ -4,6 +4,23 @@ import com.google.gson.annotations.SerializedName;
 
 public class DataCatalog {
 
+    //People
+    @SerializedName("file_path")
+    private String file_path;
+
+    @SerializedName("id")
+    private String id;
+
+    @SerializedName("biography")
+    private String biography;
+
+    @SerializedName("birthday")
+    private String birthday;
+
+    @SerializedName("place_of_birth")
+    private String place_of_birth;
+
+
     //Movie
     @SerializedName("poster_path")
     private String poster;
@@ -35,6 +52,47 @@ public class DataCatalog {
 
     @SerializedName("profile_path")
     private String profile_path;
+
+
+    public String getBiography() {
+        return biography;
+    }
+
+    public void setBiography(String biography) {
+        this.biography = biography;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getPlace_of_birth() {
+        return place_of_birth;
+    }
+
+    public void setPlace_of_birth(String place_of_birth) {
+        this.place_of_birth = place_of_birth;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getFile_path() {
+        return file_path;
+    }
+
+    public void setFile_path(String file_path) {
+        this.file_path = file_path;
+    }
 
     public String getName() {
         return name;
